@@ -1,0 +1,215 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+   background-color: #ff2e2e; Zomato Red 
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 40px;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffdede;
+}
+
+/* Main */
+main {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  text-align: center;
+  background: linear-gradient(rgba(255,46,46,0.85), rgba(255,46,46,0.85)), url('png/bg.png') no-repeat center/cover;
+  padding: 60px 30px;
+  border-radius: 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-logo {
+  width: 120px;
+  margin-bottom: 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero p {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.hero input {
+  padding: 15px 25px;
+  width: 60%;
+  max-width: 500px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.hero input:focus {
+  box-shadow: 0 0 15px rgba(255, 46, 46, 0.8);
+}
+
+/* Food Delivery Section */
+section:nth-of-type(2) {
+  margin-top: 80px;
+  background: #fff0f0;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(255, 46, 46, 0.2);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+section:nth-of-type(2)::before {
+  content: "";
+  position: absolute;
+  font-size: 100px;
+  top: 20px;
+  left: -120px;
+  animation: rocketMove 5s linear infinite;
+  opacity: 0.3;
+}
+
+section:nth-of-type(2) p {
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+   color: #b00000; 
+}
+
+/* Crazy HTML animation: bouncing food emojis */
+.food-emoji-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 3rem;
+}
+
+.food-emoji-container span {
+  display: inline-block;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.food-emoji-container span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.food-emoji-container span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.food-emoji-container span:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+/* Footer */
+footer {
+  margin-top: 80px;
+  background-color: #f4f4f4;
+  color: #777;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes rocketMove {
+  0% {
+    left: -120px;
+    top: 20px;
+    opacity: 0.3;
+  }
+  50% {
+    left: 110%;
+    top: 80px;
+    opacity: 1;
+  }
+  100% {
+    left: -120px;
+    top: 20px;
+    opacity: 0.3;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero input {
+    width: 90%;
+  }
+
+  section:nth-of-type(2)::before {
+    font-size: 60px;
+    top: 10px;
+  }
+}
